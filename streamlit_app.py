@@ -6,14 +6,12 @@ from PIL import Image
 
 st.set_page_config(layout="wide")
 
-data2 = 'https://datasets.imdbws.com/title.basics.tsv.gz'
+link = 'https://datasets.imdbws.com/title.basics.tsv.gz'
 
 st.image('https://raw.githubusercontent.com/Romain056/Streamlit/main/cinecreuse.png')
 
 @st.cache
-def load_my_data(data_path):
-    df = pd.read_csv(data_path, sep="\t",encoding='Latin-1')
-    return len(df.index)
+df = pd.read_csv(link, sep="\t",encoding='Latin-1')
 
 
 main_section = st.beta_container()
@@ -44,7 +42,7 @@ with plots:
     st.header('1. Statistiques / Visualisation des KPIs''')
     
     st.subheader('Nombre de films total en temps réel')
-    st.write(load_my_data(data2))
+    df.index
 
     HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/genres_2000.html", 'r', encoding='utf-8',)
     source_code = HtmlFile.read()
