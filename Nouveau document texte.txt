@@ -1,0 +1,33 @@
+streamlit run C:\Users\rapha\PycharmProjects\Streamlit\main.py
+
+Evolution des sorties de films par an depuis 2000
+
+
+CODE:
+(while True:
+titre = input(film)
+target = meta_df_test_dir.loc[meta_df['originalTitle'].str.contains(titre, case=False)]
+if target.shape[0] > 10 or target.shape[0] <= 0:
+    print('Nous ne parvenons pas à identifier ce film, merci de préciser votre demande.')
+elif target.shape[0] > 1:
+    affichage = target.copy()
+affichage = affichage.reset_index()
+print(affichage[['originalTitle', 'startYear']])
+ligne = int(input(
+    "Plusieurs films correspondent à votre recherche, merci de nous indiquer le numero du film (colonne de gauche) dans cette liste :"))
+target2 = target.loc[target['tconst'] == affichage.iloc[ligne, 1]]
+target_final = target2
+break
+else:
+    target_final = target
+    break
+print('recherche en cours...')
+
+result = (meta_df_model_KNN.kneighbors(target_final[['averageRating','Action','Adult','Adventure','Animation','Biography','Comedy','Crime','Documentary','Drama','Family','Fantasy', 'Film-Noir', 'Game-Show','History','Horror','Music','Musical','Mystery','News','Reality-TV','Romance', 'Sci-Fi','Short','Sport','Talk-Show','Thriller','Unknown','War','Western']]))[1]
+
+df_reco = pd.DataFrame(columns= meta_df.columns)
+for t in range(0,result.shape[1]):
+#print(meta_df_test.iloc[[result[0,t]]])
+df_reco= pd.concat([df_reco,meta_df_test_dir.iloc[[result[0,t]]]], axis=0)
+
+df_reco
