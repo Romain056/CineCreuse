@@ -43,7 +43,7 @@ with plots:
     st.subheader('Nombre de films total en temps réel')
     dfcine.index
 
-    HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/genres_2000.html", 'r', encoding='utf-8')
+    HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/genres_2000.html")
     source_code = HtmlFile.read()
     print(source_code)
     components.html(source_code,height=600)
