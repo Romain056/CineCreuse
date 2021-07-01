@@ -11,8 +11,8 @@ st.set_page_config(layout="wide")
 
 data2 = 'https://datasets.imdbws.com/title.basics.tsv.gz'
 
-
-image = Image.open('https://raw.githubusercontent.com/Romain056/Streamlit/main/cinecreuse.png')
+creuse = 'https://raw.githubusercontent.com/Romain056/Streamlit/main/cinecreuse.png'
+image = Image.open(creuse)
 st.image(image)
 
 
