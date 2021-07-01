@@ -36,9 +36,6 @@ with main_section:
 with plots:
     st.header('1. Statistiques / Visualisation des KPIs''')
 
-    st.subheader('Nombre de films total en temps réel')
-    st.write(pd.read_csv('https://datasets.imdbws.com/title.basics.tsv.gz', sep="\t",encoding='Latin-1',low_memory=False))
-
     HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/genres_2000.html", 'r', encoding='utf-8',)
     source_code = HtmlFile.read()
     print(source_code)
