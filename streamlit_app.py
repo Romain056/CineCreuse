@@ -1,6 +1,3 @@
-import pandas as pd
-import seaborn as sns
-import matplotlib as plt
 import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
