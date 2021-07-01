@@ -16,7 +16,7 @@ st.image('https://raw.githubusercontent.com/Romain056/Streamlit/main/cinecreuse.
 
 @st.cache
 def load_my_data(data_path):
-    df = pd.read_csv(data_path, sep="\t",encoding='Latin-1')
+    df = pd.read_csv(data_path, sep="\t",encoding='Latin-1',low_memory=False)
     return len(df.index)
 
 
