@@ -11,7 +11,7 @@ link = 'https://datasets.imdbws.com/title.basics.tsv.gz'
 st.image('https://raw.githubusercontent.com/Romain056/Streamlit/main/cinecreuse.png')
 
 @st.cache
-df = pd.read_csv(link, sep="\t",encoding='Latin-1')
+dfcine = pd.read_csv(link, sep="\t",encoding='Latin-1')
 
 
 main_section = st.beta_container()
@@ -42,7 +42,7 @@ with plots:
     st.header('1. Statistiques / Visualisation des KPIs''')
     
     st.subheader('Nombre de films total en temps réel')
-    df.index
+    dfcine.index
 
     HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/genres_2000.html", 'r', encoding='utf-8',)
     source_code = HtmlFile.read()
