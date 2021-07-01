@@ -10,7 +10,6 @@ link = 'https://datasets.imdbws.com/title.basics.tsv.gz'
 
 st.image('https://raw.githubusercontent.com/Romain056/Streamlit/main/cinecreuse.png')
 
-@st.cache
 dfcine = pd.read_csv(link, sep="\t",encoding='Latin-1')
 
 
