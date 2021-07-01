@@ -12,7 +12,7 @@ st.set_page_config(layout="wide")
 data2 = 'https://datasets.imdbws.com/title.basics.tsv.gz'
 
 
-image = Image.open('https://github.com/Romain056/Streamlit/blob/main/cinecreuse.png')
+image = Image.open('https://raw.githubusercontent.com/Romain056/Streamlit/main/cinecreuse.png')
 st.image(image)
 
 
@@ -52,22 +52,22 @@ with plots:
     st.subheader('Nombre de films total en temps réel')
     st.write(load_my_data(data2))
 
-    HtmlFile = open("https://github.com/Romain056/Streamlit/blob/main/genres_2000.html", 'r', encoding='utf-8',)
+    HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/genres_2000.html", 'r', encoding='utf-8',)
     source_code = HtmlFile.read()
     print(source_code)
     components.html(source_code,height=600)
 
-    HtmlFile = open("https://github.com/Romain056/Streamlit/blob/main/sorties.html", 'r', encoding='utf-8', )
+    HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/sorties.html", 'r', encoding='utf-8', )
     source_code = HtmlFile.read()
     print(source_code)
     components.html(source_code, height=600)
 
-    HtmlFile = open("https://github.com/Romain056/Streamlit/blob/main/duree_2000.html", 'r', encoding='utf-8',)
+    HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/duree_2000.html", 'r', encoding='utf-8',)
     source_code = HtmlFile.read()
     print(source_code)
     components.html(source_code,height=600)
 
-    HtmlFile = open("https://github.com/Romain056/Streamlit/blob/main/partition.html", 'r', encoding='utf-8', )
+    HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/partition.html", 'r', encoding='utf-8', )
     source_code = HtmlFile.read()
     print(source_code)
     components.html(source_code, height=600)
