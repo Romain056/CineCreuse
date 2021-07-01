@@ -9,10 +9,6 @@ st.set_page_config(layout="wide")
 st.image('https://raw.githubusercontent.com/Romain056/Streamlit/main/cinecreuse.png')
 
 
-@st.cache
-df = pd.read_csv('https://datasets.imdbws.com/title.basics.tsv.gz', sep="\t",encoding='Latin-1',low_memory=False)
-
-
 main_section = st.beta_container()
 plots = st.beta_container()
 user_inputs = st.beta_container()
@@ -41,7 +37,7 @@ with plots:
     st.header('1. Statistiques / Visualisation des KPIs''')
 
     st.subheader('Nombre de films total en temps réel')
-    st.write(df)
+    st.write(pd.read_csv('https://datasets.imdbws.com/title.basics.tsv.gz', sep="\t",encoding='Latin-1',low_memory=False))
 
     HtmlFile = open("https://raw.githubusercontent.com/Romain056/Streamlit/main/genres_2000.html", 'r', encoding='utf-8',)
     source_code = HtmlFile.read()
