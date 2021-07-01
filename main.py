@@ -4,6 +4,7 @@ import matplotlib as plt
 import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
+python -m pip install --upgrade pip
 
 
 st.set_page_config(layout="wide")
